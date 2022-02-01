@@ -46,6 +46,24 @@ function writing(element) {
 }
 writing($('h1'))
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+$('h1').hover(function () { 
+    $(this).css({
+        position: 'absolute',
+        top: getRandomInt(0, $(window).height() - $('.nav').outerHeight() - $('h1').outerHeight())+"px",
+        left: getRandomInt(0, $(window).width() - $('h1').outerWidth())+"px",
+        transition: 0.5 + 's'
+    });
+});
+
+
+
+
+
+
+
 
 $('.js-modal-show').click(function (e) {
     e.preventDefault()
