@@ -7,14 +7,14 @@ $('.ask').on('click', function (e) {
 })
 
 
-$('.read-more').click(function () {
-    $(this).toggleClass('active').prev().slideToggle(500)
-    // console.log($(this).attr('class'));
-    if ( $(this).attr('class') === 'read-more active') {
+$('.read-more').click(function (e) {
+    e.preventDefault
+    if ( $(this).html().trim() === 'Read More') {
         $(this).html('Hide')
     }else{
         $(this).html('Read More')
     }
+    $('.text-hidden').toggleClass('hidden')
     
 })
 
